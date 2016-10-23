@@ -13,4 +13,35 @@ class UserTest < ActiveSupport::TestCase
     @user.f_name = " "  || @user.l_name = " " 
     assert_not  @user.valid?
   end
+  test "email should have a maximum of 30 characters " do
+  @user.email = "a" * 31
+  assert_not @user.valid?
+end
+  test "email should not be empty" do
+    @user.email = " "
+    assert_not  @user.valid?
+  end
+  test "email, reg and phone should be unique" do
+  duplicate_user = @user.dup
+  @user.save
+  assert_not duplicate_user.valid?
+end
+  test "reg should be present" do
+    @user.reg = " "
+    assert_not @user.valid?
+  end
+  test "reg should not be longer than usual" do
+    @user.reg = "a" * 15
+    assert_not @user.valid?
+  end
+
+  # test "phone should be numeric" do 
+  #   @user.phone = "wepeople"
+  #   assert_not user.valid?
+
+  # test "phone number should not be more than 13 characters" do
+  # @user.phone =  "0965663434634635"
+  # assert_not @user.valid
+# end
+
 end
