@@ -35,13 +35,14 @@ end
     assert_not @user.valid?
   end
 
-  # test "phone should be numeric" do 
-  #   @user.phone = "wepeople"
-  #   assert_not user.valid?
+  test "phone should be numeric" do 
+    @user.phone = "wepeople"
+    assert_not @user.valid?
+  end
 
-  # test "phone number should not be more than 13 characters" do
-  # @user.phone =  "0965663434634635"
-  # assert_not @user.valid
-# end
+  test "phone number should not be more than 13 characters" do
+    @user.phone =  06634346346355555555555
+    assert_not @user.valid?
+  end
 
 end
