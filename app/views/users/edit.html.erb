@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="large-offset-3">
+<h1> Edit Details Here </h1>
+<%= render 'shared/errors' %>
+<div class="medium-6">
+<%= form_for @user do |f| %>
+    <%= f.label   :registration %>
+    <%= f.text_field :reg, placeholder: "Enter registration number..." %>
+    <%= f.label :f_name %>
+    <%= f.text_field :f_name%>
+    <%= f.label :l_name %>
+    <%= f.text_field  :l_name%>
+    <%= f.label "email" %>
+    <%= f.email_field :email %>
+    <%= f.label :phone %>
+    <%= f.number_field :phone %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit :SUBMIT %>
+<% end %>
+</div>
+</div>
+</div>
