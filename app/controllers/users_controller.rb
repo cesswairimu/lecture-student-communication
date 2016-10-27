@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params_user)
     if @user.save
+      flash[:success] = "Welcome to Lecture Student Web Application"
       redirect_to @user
     else
+     flash[:danger] = "Loser!!! Check your input and try again!!" 
       render 'new'
     end
   end
