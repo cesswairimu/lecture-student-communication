@@ -6,10 +6,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params_user)
     if @user.save
-      redirect_to root_url
+      redirect_to @user
     else
       render 'new'
     end
+  end
+  def show
+    @user = User.find(params[:id])
   end
 
   private
