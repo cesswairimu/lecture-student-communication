@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to Lecture Student Web Application"
       redirect_to @user
     else
-     flash[:danger] = "Loser!!! Check your input and try again!!" 
+      flash[:danger] = "Loser!!! Check your input and try again!!" 
       render 'new'
     end
   end
@@ -25,8 +25,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if  @user.update_attributes(params_user)
+      flash[:success] = "Your Profile was updated successfully!!!"
       redirect_to @user
     else
+      flash[:danger] = "Error editing profile, if you exit your previous details remain"
       render 'edit'
     end
   end
