@@ -44,5 +44,9 @@ end
     @user.phone =  06634346346355555555555
     assert_not @user.valid?
   end
+  test "password should have minimum characters" do
+    @user.password = "a" * 4 
+    assert_not @user.valid?
+  end
 
 end
