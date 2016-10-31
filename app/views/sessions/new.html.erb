@@ -1,2 +1,16 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<% provide(:title, "Login") %>
+<div class="row">
+    <div class="large-offset-3">
+        <div class="medium-6">
+            <h1>Login here</h1>
+            <%= form_for(:sesson, url: login_path) do |f| %>
+                <%= f.label :Registration %>
+                <%= f.text_field :reg %>
+                <%= f.label :Password %>
+                <%= f.password_field :password %>
+                <%= f.submit "Login" %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
