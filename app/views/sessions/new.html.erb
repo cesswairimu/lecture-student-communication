@@ -4,7 +4,7 @@
         <div class="medium-6">
             <%= form_for(:sesson, url: login_path) do |f| %>
                 <h1>Login here</h1>
-                <%= render 'errors/errors', object: f.object %>
+            <%# <%= render 'shared/errors', object: f.object  %1> %>
                 <%= f.label :Registration %>
                 <%= f.text_field :reg %>
                 <%= f.label :Password %>
