@@ -5,9 +5,9 @@
             <%= form_for(:sesson, url: login_path) do |f| %>
                 <h1>Login here</h1>
             <%# <%= render 'shared/errors', object: f.object  %1> %>
-                <%= f.label :Registration %>
+                <%= f.label :reg%>
                 <%= f.text_field :reg %>
-                <%= f.label :Password %>
+                <%= f.label :password %>
                 <%= f.password_field :password %>
                 <%= f.submit "Login" %>
             <% end %>
