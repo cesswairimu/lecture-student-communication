@@ -33,6 +33,10 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+  def destroy
+    logout
+    redirect_to root_url
+  end
 
   private
   def params_user
