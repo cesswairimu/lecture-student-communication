@@ -1,9 +1,9 @@
 <div class="row">
     <div class="large-offset-3">
 <h1> Edit Details Here </h1>
-<%= render 'shared/errors' %>
 <div class="medium-6">
 <%= form_for @user do |f| %>
+<%= render 'shared/errors', object: f.object %>
     <%= f.label   :registration %>
     <%= f.text_field :reg, placeholder: "Enter registration number..." %>
     <%= f.label :f_name %>
