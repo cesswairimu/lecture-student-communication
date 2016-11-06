@@ -34,9 +34,7 @@ class UsersController < ApplicationController
     end
   end
   def destroy
-    logout
-    redirect_to root_url
-  end
+     end
 
   private
   def params_user
