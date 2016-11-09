@@ -8,7 +8,9 @@
                 <%= f.email_field :email %>
                 <%= f.label :password %>
                 <%= f.password_field :password %>
+                <h5>Or Signup Here if you ain't here yet  <%= link_to "Signup", new_user_path %></h5>
                 <%= f.submit "Login" %>
+                
             <% end %>
         </div>
     </div>
