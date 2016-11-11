@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
   REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   NAME = /\A[a-zA-Z]+\z/
   validates :f_name, presence:true, length: { minimum:4  }, format: { with: NAME }  
@@ -17,5 +18,9 @@ class User < ApplicationRecord
   def User.token
     SecureRandom.urlsafe_base64
   end
-    
+
+  def remember
+    self.remember_token =User.token
+    update_attribute(:remember_digest, User.digest(remember__token))
+  end
 end
