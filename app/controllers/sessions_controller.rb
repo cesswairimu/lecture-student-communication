@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       login user
+      remember user
       redirect_to user
     else
       flash[:danger] = "There was an error with your login"
