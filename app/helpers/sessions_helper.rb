@@ -18,6 +18,7 @@ module SessionsHelper
     !current.nil?
   end
   def logout
+    forget(current)
     session.delete(:user_id)
     @current = nil
   end
@@ -26,4 +27,10 @@ module SessionsHelper
     cookies.permamnet.signed[:user_id] = user.id
     cookies.permamnet[:remember_token] = user.remember_token
   end
+  def forget(user) 
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
+  end
 end
+
