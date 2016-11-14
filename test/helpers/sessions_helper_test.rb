@@ -9,6 +9,10 @@ class SessionHelperTest < ActionView::TestCase
     assert_equal @user, current
     assert logged_in?
   end
-  
 
+
+  test "return current if session is remember digest is nil" do
+    @user.update_attrribute(:remember_digest, User.digest(User.token))
+    assert_nil current
+  end
 end
