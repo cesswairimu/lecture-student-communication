@@ -10,7 +10,7 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
   def login_as(user, option={})
-    password = option[:password] || 'password'
+    password = options[:password] || 'password'
     remember_me = options[:remember_me] || '1'
     if integration_test?
       post login_path, session: { email: user.email, 
