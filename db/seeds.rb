@@ -12,4 +12,7 @@ User.create!(f_name: "cecil",
              reg: "ci/00050/2013",
              phone: 072077,
              password: "foobar",
-             password_confirmation: "foobar")
+             password_confirmation: "foobar",
+            activated: true,
+            activated_at: Time.zone.now
+            )
