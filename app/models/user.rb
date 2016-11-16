@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
+  before_save :email_downcase
+  before_create :create_activation_digest
   REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   NAME = /\A[a-zA-Z]+\z/
   validates :f_name, presence:true, length: { minimum:4  }, format: { with: NAME }  
@@ -31,4 +33,12 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+  def email_downcase
+    self.email = email.downcase
+  end
+  def create_activation_digest
+    self.activation_token = User.token
+    self.activation_digest = User.digest(activation_token)
+  end
+  
 end
