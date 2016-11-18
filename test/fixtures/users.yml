@@ -6,10 +6,14 @@ betty:
   l_name: MyString
   email: MyString
   phone: MyString
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
-two:
+fav:
   reg: MyString
   f_name: MyString
   l_name: MyString
   email: MyString
   phone: MyString
+  activated: true
+  activated_at: <%= Time.zone.now %>
