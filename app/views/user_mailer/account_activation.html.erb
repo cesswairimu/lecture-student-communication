@@ -1,5 +1,10 @@
-<h1>User#account_activation</h1>
+<h1>Student-Lecturer Feedback</h1>
 
 <p>
-  <%= @greeting %>, find me in app/views/user_mailer/account_activation.html.erb
+Hi <%= @user.f_name %>,</p>
+<p>
+Welcome to this awesome website of Student-Lecturer Feedback Website
+Click the link below to activate your account!!
+<%= link_to "Activate account", edit_account_activation_url(
+    @user.activation_token, email: @user.email) %>
 </p>
