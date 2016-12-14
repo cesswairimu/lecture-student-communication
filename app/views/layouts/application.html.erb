@@ -14,7 +14,7 @@
   <body>
       <%= render 'shared/top-bar' %>
       <% flash.each do |type, msg| %>
-          <div class="callout small <%= type %>" data-closable>
+          <div id="flash" class="callout small <%= type %>" data-closable>
               <%= msg %></div>
       <% end %>
 
